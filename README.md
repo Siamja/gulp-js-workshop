@@ -6,12 +6,13 @@
 
 # GulpJS - Workshop par Dylan, Gary, Jérémy et Meroine
 
+## GulpJS, qu'est-ce que c'est ?
+
 
 ## Prérequis et installation
 
 
-
-## Le fichier Gulpfilejs
+## Le fichier Gulpfile.js
 
 
 ## Livecoding
