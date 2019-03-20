@@ -24,7 +24,7 @@ Intégrer Gulp à un projet va donc être significatif d'un énorme gain de temp
 
 ## Prérequis et installation
  	
-  Pour utiliser gulp vous aurez besoin de Node.js, pour l'installer utiliser les commandes suivantes:
+  Pour utiliser Gulp vous aurez besoin de Node.js, pour l'installer utiliser les commandes suivantes:
 	
 ```bash
 $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -85,7 +85,7 @@ Afin d'initier le projet taper la commande suivante:
 ```bash
 npm init
 ```
-D'abord nous allons installé gulp dans les dépendances de développement:
+D'abord nous allons installé Gulp dans les dépendances de développement:
 
 ```bash
 npm install gulp --save-dev
@@ -99,7 +99,7 @@ Créer un fichier gulpfile.js où nous allons déclarer les variables dont nous 
 
 ```js
 const gulp = require('gulp');
-const sass = require(gulp-sass'); // Plugins du fichier package.json
+const sass = require('gulp-sass'); // Plugins du fichier package.json
 ```
 Nous allons maintenant créer une tâche à effectuer :
 
@@ -110,6 +110,14 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('assets/css'));
 });
 ```
+
+Pour exécuter cette tâche et compiler le scss tapez simplement:
+
+```bash
+gulp sass
+```
+Pour l'instant à chaque fois que vous voudrez compiler votre scss vous devrez taper cette commande, nous allons remédier à ca en créant une tâche de surveillance automatique.
+Cette fonction de surveillance est directement intégrée à Gulp
 
 
 
