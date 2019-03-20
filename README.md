@@ -80,6 +80,34 @@ let destination = './dist'; // dossier à livrer
 ## Livecoding
 
 <!-- parler en quelques mots de ce que Gary et Dylan vont présenter -->
+Afin d'initier le projet taper la commande suivante:
+
+```bash
+npm init
+```
+D'abord nous allons installé gulp dans les dépendances de développement:
+
+```bash
+npm install gulp --save-dev
+```
+Ensuite installez gulp-sass dans les dépendances de développement:
+
+```bash
+npm install gulp-sass --save-dev
+```
+Créer un fichier gulpfile.js où nous allons déclarer les variables dont nous aurons besoin:
+
+```js
+const gulp = require('gulp');
+const sass = require(gulp-sass'); // Plugins du fichier package.json;
+```
+
+
+
+
+
+
+
 Minify 
 https://www.npmjs.com/package/gulp-uglifycss
 
