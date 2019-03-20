@@ -24,7 +24,7 @@ Intégrer Gulp à un projet va donc être significatif d'un énorme gain de temp
 
 ## Prérequis et installation
  	
-  Pour utiliser Gulp vous aurez besoin de Node.js, pour l'installer utiliser les commandes suivantes:
+  Pour utiliser Gulp vous aurez besoin de Node.js. Pour l'installer, utilisez les commandes suivantes:
 	
 ```bash
 $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -33,7 +33,7 @@ $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 $ sudo apt-get install nodejs npm
 ```
 
-Une fois que l'installation de Node.js est terminée tapez la commande suivante afin d'installer gulp de manière globale sur votre ordinateur:
+Une fois que l'installation de Node.js est terminée, tapez la commande suivante afin d'installer gulp de manière globale sur votre ordinateur:
 
 ```bash
 $ sudo npm install gulp -g
@@ -80,12 +80,12 @@ let destination = './dist'; // dossier à livrer
 ## Livecoding
 
 <!-- parler en quelques mots de ce que Gary et Dylan vont présenter -->
-Afin d'initier le projet taper la commande suivante:
+Afin d'initier le projet, tapez la commande suivante:
 
 ```bash
 npm init
 ```
-D'abord nous allons installé Gulp dans les dépendances de développement:
+D'abord nous allons installer Gulp dans les dépendances de développement:
 
 ```bash
 npm install gulp --save-dev
@@ -95,7 +95,7 @@ Ensuite installez gulp-sass dans les dépendances de développement, ce plugin p
 ```bash
 npm install gulp-sass --save-dev
 ```
-Créer un fichier gulpfile.js où nous allons déclarer les variables dont nous aurons besoin:
+Créez un fichier gulpfile.js où nous allons déclarer les variables dont nous aurons besoin:
 
 ```js
 const gulp = require('gulp');
@@ -111,13 +111,14 @@ gulp.task('sass', () => {
 });
 ```
 
-Pour exécuter cette tâche et compiler le scss tapez simplement:
+Pour exécuter cette tâche et compiler le scss, tapez simplement:
 
 ```bash
 gulp sass
 ```
-Pour l'instant à chaque fois que vous voudrez compiler votre scss vous devrez taper cette commande, nous allons remédier à ca en créant une tâche de surveillance automatique.
-Cette fonction de surveillance est directement intégrée à Gulp (pas besoin de plugin et permettra de détecter toute modification de contenu d'un fichier et de lancer automatiquement une tâche prévue sans avoir besoin de systématiquement lancer la même commande.
+Pour l'instant à chaque fois que vous voudrez compiler votre scss, vous devrez taper cette commande. Nous allons remédier à ça en créant une tâche de surveillance automatique.
+
+Cette fonction de surveillance est directement intégrée à Gulp (pas besoin de plugin) et permettra de détecter toute modification de contenu d'un fichier et de lancer automatiquement une tâche prévue sans avoir besoin de systématiquement lancer la même commande.
 
 ```js
 gulp.task('watch', () => {
@@ -158,3 +159,5 @@ gulp.task('watch', () => {
 ## Ressources utiles
 
 - https://gulpjs.com/
+- https://github.com/gulpjs/gulp
+- https://www.youtube.com/watch?v=tTrPLQ6nOX8 (tutoriel en anglais et très récent)
