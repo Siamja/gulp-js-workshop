@@ -47,7 +47,7 @@ Le fichier gulpfile.js est le fichier le plus important puisqu'il va s'occuper d
 Une tâche Gulp ressemble à ça :
 
 ```javascript
-gulp.task('css', function () {
+gulp.task('css', () => {
   return gulp.src(ici-ma-source)
     /* ici les plugins Gulp à exécuter */
     .pipe(gulp.dest(ici-ma-destination));
