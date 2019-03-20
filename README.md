@@ -90,7 +90,7 @@ D'abord nous allons installé gulp dans les dépendances de développement:
 ```bash
 npm install gulp --save-dev
 ```
-Ensuite installez gulp-sass dans les dépendances de développement:
+Ensuite installez gulp-sass dans les dépendances de développement, ce plugin permet de compiler le scss en css:
 
 ```bash
 npm install gulp-sass --save-dev
@@ -99,7 +99,16 @@ Créer un fichier gulpfile.js où nous allons déclarer les variables dont nous 
 
 ```js
 const gulp = require('gulp');
-const sass = require(gulp-sass'); // Plugins du fichier package.json;
+const sass = require(gulp-sass'); // Plugins du fichier package.json
+```
+Nous allons maintenant créer une tâche à effectuer :
+
+```js
+gulp.task('sass', () => {
+    return gulp.src('assets/scss/style.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('assets/css'));
+});
 ```
 
 
