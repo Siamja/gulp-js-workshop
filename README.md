@@ -80,6 +80,34 @@ let destination = './dist'; // dossier à livrer
 ## Livecoding
 
 <!-- parler en quelques mots de ce que Gary et Dylan vont présenter -->
+Minify 
+https://www.npmjs.com/package/gulp-uglifycss
+
+Installation du plugin uglifycss en ligne de commande
+npm install --save gulp-uglifycss
+
+Dans le fichier gulpfile.js, on importe uglifycss
+const uglifycss = require('gulp-uglifycss');
+
+Modification du lien css dans le html 
+<link rel="stylesheet" href="dist/style.css">
+
+Le dossier dist et le fichier style.css se génèrent automatiquement à l’exécution du plugin via la fonction: 
+gulp.task('css', () => {
+   gulp.src('assets/css/*.css')  // source du fichier à minifier
+     .pipe(uglifycss({           // exécution du plugin
+       "maxLineLen": 80,
+       "uglyComments": true
+     }))
+     .pipe(gulp.dest('./dist/'));// génération du dossier dist
+ });
+
+Pour éviter de taper gulp css à chaque fois, on va ajouter la tâche dans le watch. gulp watch contiendra et exécutera tous nos plugins.
+
+gulp.task('watch', () => {
+   gulp.watch('assets/scss/style.scss', gulp.series('sass')); // compilateur SASS
+   gulp.watch('assets/css/*.css', gulp.series('css'));        //  minify css
+});
 
 ## Ressources utiles
 
