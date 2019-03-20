@@ -117,7 +117,13 @@ Pour exécuter cette tâche et compiler le scss tapez simplement:
 gulp sass
 ```
 Pour l'instant à chaque fois que vous voudrez compiler votre scss vous devrez taper cette commande, nous allons remédier à ca en créant une tâche de surveillance automatique.
-Cette fonction de surveillance est directement intégrée à Gulp
+Cette fonction de surveillance est directement intégrée à Gulp (pas besoin de plugin et permettra de détecter toute modification de contenu d'un fichier et de lancer automatiquement une tâche prévue sans avoir besoin de systématiquement lancer la même commande.
+
+```js
+gulp.task('watch', () => {
+    gulp.watch('assets/scss/style.scss', gulp.series('sass'));
+});
+```
 
 
 
