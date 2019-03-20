@@ -132,7 +132,7 @@ Installation du plugin uglifycss en ligne de commande
 ```bash npm install --save gulp-uglifycss```
 
 Dans le fichier gulpfile.js, on importe uglifycss
-```js const uglifycss = require('gulp-uglifycss');```
+```const uglifycss = require('gulp-uglifycss');```
 
 Modification du lien css dans le html 
 <link rel="stylesheet" href="dist/style.css">
