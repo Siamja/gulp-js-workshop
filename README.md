@@ -24,6 +24,21 @@ Intégrer Gulp à un projet va donc être significatif d'un énorme gain de temp
 
 ## Prérequis et installation
  	
+  Pour utiliser gulp vous aurez besoin de Node.js pour l'installer utiliser les commandes suivantes:
+	
+	```bash
+	$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+	```
+	```bash
+	$ sudo apt-get install nodejs npm
+	```
+
+Une fois que l'installation de Node.js est terminée tapez la commande suivante afin d'installer gulp de manière globale sur votre ordinateur:
+
+	```bash
+	$ sudo npm install gulp -g
+	```
+
 
 ## Le fichier Gulpfile.js
 
