@@ -23,7 +23,16 @@ Afin d'avoir une idée du nombre d'actions possibles avec Gulp, il faut savoir q
 Intégrer Gulp à un projet va donc être significatif d'un énorme gain de temps puisqu'il va nous permettre d'automatiser les tâches répétitives. Il ne restera donc plus qu'à se concentrer sur le principal : produire un code fonctionnel.
 
 ## Prérequis et installation
+ 	
+  Pour utiliser gulp vous aurez besoin de Node.js pour l'installer utiliser les commandes suivantes:
 
+	`$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`
+
+	`$ sudo apt-get install nodejs npm`
+
+	Une fois que l'installation de Node.js est terminée tapez la commande suivante afin d'installer gulp de manière globale sur votre ordinateur:
+
+	`$ sudo npm install gulp -g`
 
 ## Le fichier Gulpfile.js
 
