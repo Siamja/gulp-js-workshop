@@ -126,10 +126,6 @@ gulp css
 
 Installation des dépendances uglifycss et rename en ligne de commande
 ```const uglifycss = require('gulp-uglifycss');
-const rename = require('gulp-rename')``
-
-Dans le fichier gulpfile.js, on importe uglifycss et rename
-```const uglifycss = require('gulp-uglifycss');
    const rename = require('gulp-rename')
 ```
 Le dossier dist et le fichier style.min.css se génèrent automatiquement à l’exécution du plugin via la fonction: 
