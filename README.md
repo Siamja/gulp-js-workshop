@@ -101,60 +101,63 @@ Créez un fichier gulpfile.js où nous allons déclarer les variables dont nous 
 const gulp = require('gulp');
 const sass = require('gulp-sass'); // Plugins du fichier package.json
 ```
+Modification du lien css dans le html 
+```<link rel="stylesheet" href="dist/style.min.css">```
+
 Nous allons maintenant créer une tâche à effectuer :
 
 ```js
-gulp.task('sass', () => {
-    return gulp.src('assets/scss/style.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('assets/css'));
-});
+gulp.task('css', done => { // création de la tâche css
+    gulp.src('assets/scss/style.scss') // source du fichier à modifier 
+        .pipe(sass())  // exécute le plugin sass 
+        .pipe(gulp.dest('assets/css'))  // creation du dossier et du fichier css 
+        done();
+})
 ```
 
 Pour exécuter cette tâche et compiler le scss, tapez simplement:
 
 ```bash
-gulp sass
-```
-Pour l'instant à chaque fois que vous voudrez compiler votre scss, vous devrez taper cette commande. Nous allons remédier à ça en créant une tâche de surveillance automatique.
-
-Cette fonction de surveillance est directement intégrée à Gulp (pas besoin de plugin) et permettra de détecter toute modification de contenu d'un fichier et de lancer automatiquement une tâche prévue sans avoir besoin de systématiquement lancer la même commande.
-
-```js
-gulp.task('watch', () => {
-    gulp.watch('assets/scss/style.scss', gulp.series('sass'));
-});
+gulp css
 ```
 ## Minify 
 
 - https://www.npmjs.com/package/gulp-uglifycss
 
-Installation du plugin uglifycss en ligne de commande
+Installation des dépendances uglifycss et rename en ligne de commande
 ```npm install --save gulp-uglifycss```
 
-Dans le fichier gulpfile.js, on importe uglifycss
-```const uglifycss = require('gulp-uglifycss');```
-
-Modification du lien css dans le html 
-```<link rel="stylesheet" href="dist/style.css">```
-
-Le dossier dist et le fichier style.css se génèrent automatiquement à l’exécution du plugin via la fonction: 
-```js
-gulp.task('css', () => {
-   gulp.src('assets/css/*.css')  // source du fichier à minifier
-     .pipe(uglifycss({           // exécution du plugin
-       "maxLineLen": 80,
-       "uglyComments": true
-     }))
-     .pipe(gulp.dest('./dist/'));// génération du dossier dist
- });
+Dans le fichier gulpfile.js, on importe uglifycss et rename
+```const uglifycss = require('gulp-uglifycss');
+   const rename = require('gulp-rename')
 ```
-Pour éviter de taper gulp css à chaque fois, on va ajouter la tâche dans le watch. gulp watch contiendra et exécutera tous nos plugins.
+Le dossier dist et le fichier style.min.css se génèrent automatiquement à l’exécution du plugin via la fonction: 
 ```js
+gulp.task('css', done => { 
+    gulp.src('assets/scss/style.scss') 
+        .pipe(sass())  
+        .pipe(gulp.dest('assets/css')) 
+        .pipe(rename({
+            suffix: '.min' // pour le minify, on ajoute le suffix au style.css (style.min.css)
+          }))
+        .pipe(uglifycss({           // exécution du plugin
+            "maxLineLen": 80,       // nombre de caractères par ligne
+        }))
+        .pipe(gulp.dest('./dist/'));// génération du dossier dist
+        done();
+        
+})
+```
+Pour éviter de taper gulp css à chaque changement, on va automatiser grâce à un watch et la création d'un gulp par défaut.
+```js
+// Création du watch
 gulp.task('watch', () => {
-   gulp.watch('assets/scss/style.scss', gulp.series('sass')); // compilateur SASS
-   gulp.watch('assets/css/*.css', gulp.series('css'));        //  minify css
-});
+    gulp.watch('assets/scss/style.scss', gulp.series('css')); 
+   
+ });
+
+// Gulp par défaut
+ gulp.task('default', gulp.series('css', 'watch'));
 ```
 ## Ressources utiles
 
