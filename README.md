@@ -125,7 +125,8 @@ gulp css
 - https://www.npmjs.com/package/gulp-uglifycss
 
 Installation des dépendances uglifycss et rename en ligne de commande
-```npm install --save gulp-uglifycss```
+```const uglifycss = require('gulp-uglifycss');
+const rename = require('gulp-rename')``
 
 Dans le fichier gulpfile.js, on importe uglifycss et rename
 ```const uglifycss = require('gulp-uglifycss');
