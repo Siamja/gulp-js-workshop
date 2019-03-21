@@ -125,7 +125,13 @@ gulp css
 - https://www.npmjs.com/package/gulp-uglifycss
 - https://www.npmjs.com/package/gulp-rename
 
-Installation des dépendances uglifycss et rename en ligne de commande
+Installation des dépendances en ligne commande
+```bash
+npm install gulp-uglifycss --save-dev
+npm install gulp-rename --save-dev
+```
+
+Import des dépendances uglifycss et rename en ligne de commande
 ```js
    const uglifycss = require('gulp-uglifycss');
    const rename = require('gulp-rename');
