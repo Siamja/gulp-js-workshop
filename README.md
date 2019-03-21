@@ -131,7 +131,7 @@ npm install gulp-uglifycss --save-dev
 npm install gulp-rename --save-dev
 ```
 
-Import des dépendances uglifycss et rename en ligne de commande
+Import des dépendances en ligne de commande
 ```js
    const uglifycss = require('gulp-uglifycss');
    const rename = require('gulp-rename');
