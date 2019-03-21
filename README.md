@@ -123,6 +123,7 @@ gulp css
 ## Minify 
 
 - https://www.npmjs.com/package/gulp-uglifycss
+- https://www.npmjs.com/package/gulp-rename
 
 Installation des dépendances uglifycss et rename en ligne de commande
 ```js
