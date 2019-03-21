@@ -110,7 +110,7 @@ Nous allons maintenant créer une tâche à effectuer :
 gulp.task('css', done => { // création de la tâche css
     gulp.src('assets/scss/style.scss') // source du fichier à modifier 
         .pipe(sass())  // exécute le plugin sass 
-        .pipe(gulp.dest('assets/css'))  // creation du dossier et du fichier css 
+        .pipe(gulp.dest('assets/css'))  // création du dossier et du fichier css 
         done();
 })
 ```
@@ -148,7 +148,7 @@ gulp.task('css', done => {
         
 })
 ```
-Pour éviter de taper gulp css à chaque changement, on va automatiser grâce à un watch et la création d'un gulp par défaut.
+Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche grâce à un watch et la création d'un gulp par défaut.
 ```js
 // Création du watch
 gulp.task('watch', () => {
