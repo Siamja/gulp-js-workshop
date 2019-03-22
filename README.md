@@ -185,8 +185,7 @@ gulp.task('css', () => {
             "maxLineLen": 80,
             "uglyComments": true
           }))
-        .pipe(gulp.dest('./dist/css'));// génération du dossier dist et du fichier css
-        
+        .pipe(gulp.dest('./dist/css'));// génération du dossier dist 
         
 })
 
