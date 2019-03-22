@@ -8,7 +8,7 @@
 
 ## GulpJS, qu'est-ce que c'est ?
 
-Gulp est un task runner, autrement dit un "automatiseur de tâches". Autrement dit, il lance des bouts de scripts à notre place,ce qui va nous permettre de gagner énormément de temps.
+Gulp est un task runner, autrement dit un "automatiseur de tâches". Concrètement, il lance des bouts de scripts à notre place,ce qui va nous permettre de gagner énormément de temps.
 
 Les tâches prises en main par Gulp peuvent être très variées :
 
