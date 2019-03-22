@@ -162,6 +162,59 @@ Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche
     gulp.watch('assets/scss/style.scss', gulp.series('css'));
  });
 ```
+### Le fichier glulpfile.js finale
+
+```js
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const uglifycss = require('gulp-uglifycss'); //installation des différents plugins
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
+const babel = require('gulp-babel');
+
+
+gulp.task('css', () => {
+    return gulp.src('assets/scss/style.scss') 
+        .pipe(sass()) // compilateur SASS
+        .pipe(gulp.dest('assets/css'))
+        .pipe(rename({ // Renomme le fichier css
+            suffix: '.min'
+          }))
+        .pipe(uglifycss({   //Exécution du plugin qui minifie le css        
+            "maxLineLen": 80,
+            "uglyComments": true
+          }))
+        .pipe(gulp.dest('./dist/css'));// génération du dossier dist et du fichier css
+        
+        
+})
+
+gulp.task('js', () => {
+    return gulp.src('assets/js/*.js')
+        .pipe(babel({ // Convertis le javascript en ancien js
+          presets: ['@babel/env']
+        }))
+        .pipe(uglify()) // Minifie tout les fichiers js
+        .pipe(concat('global.min.js')) // Permet de concaténer tout les fichiers JS
+        .pipe(gulp.dest('./dist/js'))
+})
+
+gulp.task('img', () => {
+    return gulp.src('assets/img/*.{png,jpg,jpeg,gif,svg}')
+        .pipe(imagemin()) // Minifie toutes les images
+        .pipe(gulp.dest('./dist/img'))
+})
+
+
+  gulp.task('watch', () => {
+    gulp.watch('assets/scss/style.scss', gulp.series('css')); //Surveille toutes les modifications dans le fichier style.scss
+    gulp.watch('assets/js/*.js', gulp.series('js')); //Surveille les modifications de tout les fichier js
+ });
+```
+
+
 ## Ressources utiles
 
 - https://gulpjs.com/
