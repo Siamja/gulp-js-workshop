@@ -141,19 +141,18 @@ Import des dépendances
 ```
 Le dossier dist et le fichier style.min.css se génèrent automatiquement à l’exécution du plugin via la fonction: 
 ```js
-gulp.task('css', done => { 
-    gulp.src('assets/scss/style.scss') 
-        .pipe(sass())  
-        .pipe(gulp.dest('assets/css')) 
+gulp.task('css', () => {
+    return gulp.src('assets/scss/style.scss') 
+        .pipe(sass()) // compilateur SASS
+        .pipe(gulp.dest('assets/css'))
         .pipe(rename({
-            suffix: '.min' // pour le minify, on ajoute le suffix au style.css (style.min.css)
+            suffix: '.min'  // pour le minify, on ajoute le suffix au style.css (style.min.css)
           }))
         .pipe(uglifycss({           // exécution du plugin
             "maxLineLen": 80,       // nombre de caractères par ligne
-        }))
-        .pipe(gulp.dest('./dist/'));// génération du dossier dist
-        done();
-        
+            "uglyComments": true
+          }))
+        .pipe(gulp.dest('./dist/css'));// génération du dossier dist             
 })
 ```
 Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche grâce à la création d'une fonction watch.
