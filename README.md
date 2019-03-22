@@ -217,6 +217,7 @@ gulp.task('img', () => {
 
 ## Ressources utiles
 
+- https://www.alsacreations.com/tuto/lire/1685-ebauche-de-workflow-gulp-taches-uncss-includes-critical-css.html
 - https://gulpjs.com/
 - https://github.com/gulpjs/gulp
 - https://www.youtube.com/watch?v=tTrPLQ6nOX8 (tutoriel en anglais et très récent)
