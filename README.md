@@ -79,14 +79,11 @@ Nous pouvons maintentenant déclarer toutes les variables dont nous aurons besoi
 
 ```javascript
 // Requis
-let gulp = require('gulp');
+const gulp = require('gulp');
 
 // Include plugins
-let plugins = require('gulp-load-plugins')(); // tous les plugins de package.json
+const plugins = require('gulp-load-plugins'); // tous les plugins de package.json
 
-// Variables de chemins
-let source = './src'; // dossier de travail
-let destination = './dist'; // dossier à livrer
 ```
 
 ## Livecoding
