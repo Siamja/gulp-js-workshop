@@ -162,7 +162,7 @@ Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche
     gulp.watch('assets/scss/style.scss', gulp.series('css'));
  });
 ```
-### Le fichier glulpfile.js finale
+### Le fichier gulpfile.js finale
 
 ```js
 const gulp = require('gulp');
