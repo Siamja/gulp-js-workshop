@@ -160,7 +160,6 @@ Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche
 ```js
   gulp.task('watch', () => {
     gulp.watch('assets/scss/style.scss', gulp.series('css'));
-    gulp.watch('assets/js/*.js', gulp.series('js')); 
  });
 ```
 ## Ressources utiles
