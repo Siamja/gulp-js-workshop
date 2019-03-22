@@ -24,11 +24,10 @@ Intégrer Gulp à un projet va donc être significatif d'un énorme gain de temp
 
 ## Prérequis et installation
  	
-  Pour utiliser Gulp vous aurez besoin de Node.js. Pour l'installer, utilisez les commandes suivantes:
+  Pour utiliser Gulp vous aurez besoin de Node.js. Pour l'installer, suivez le lien suivant:
 	
-```bash
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-```
+- https://nodejs.org/en/download/
+
 ```bash
 sudo apt-get install nodejs npm
 ```
@@ -161,16 +160,12 @@ gulp.task('css', done => {
         
 })
 ```
-Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche grâce à un watch et la création d'un gulp par défaut.
+Pour éviter de taper gulp css à chaque changement, on va automatiser la tâche grâce à la création d'une fonction watch.
 ```js
-// Création du watch
-gulp.task('watch', () => {
-    gulp.watch('assets/scss/style.scss', gulp.series('css')); 
-   
+  gulp.task('watch', () => {
+    gulp.watch('assets/scss/style.scss', gulp.series('css'));
+    gulp.watch('assets/js/*.js', gulp.series('js')); 
  });
-
-// Gulp par défaut
- gulp.task('default', gulp.series('css', 'watch'));
 ```
 ## Ressources utiles
 
