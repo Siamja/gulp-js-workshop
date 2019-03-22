@@ -112,7 +112,7 @@ Nous allons maintenant créer une tâche à effectuer :
 
 ```js
 gulp.task('css', () => { // création de la tâche css
-    gulp.src('assets/scss/style.scss') // source du fichier à modifier 
+    return gulp.src('assets/scss/style.scss') // source du fichier à modifier 
         .pipe(sass())  // exécute le plugin sass 
         .pipe(gulp.dest('assets/css'))  // création du dossier et du fichier css 
 })
