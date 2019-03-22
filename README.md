@@ -27,18 +27,30 @@ Intégrer Gulp à un projet va donc être significatif d'un énorme gain de temp
   Pour utiliser Gulp vous aurez besoin de Node.js. Pour l'installer, utilisez les commandes suivantes:
 	
 ```bash
-$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 ```
 ```bash
-$ sudo apt-get install nodejs npm
+sudo apt-get install nodejs npm
 ```
 
 Une fois que l'installation de Node.js est terminée, tapez la commande suivante afin d'installer gulp de manière globale sur votre ordinateur:
 
 ```bash
-$ sudo npm install gulp -g
+sudo npm install gulp -g
 ```
-
+Les dépendances que nous allons utiliser durant le livecode :
+```bash
+npm install gulp --save-dev
+npm install gulp-sass --save-dev
+npm install gulp-uglifycss --save-dev
+npm install gulp-uglify --save-dev
+npm install gulp-rename --save-dev
+npm install gulp-concat --save-dev
+npm install gulp-imagemin --save-dev
+npm install gulp-babel --save-dev
+npm install --save-dev @babel/core
+npm install --save-dev @babel/preset-env
+```
 
 ## Le fichier Gulpfile.js
 
