@@ -1,0 +1,15 @@
+$heigth : 100vh;
+
+body {
+    background-color: rgb(165, 185, 165);
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $heigth;
+    }
+    h1 {
+        font-size: 4rem;
+        color: darkmagenta;
+    }
+}
